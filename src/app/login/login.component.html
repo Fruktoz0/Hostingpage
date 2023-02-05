@@ -1,0 +1,5 @@
+<div class="container loginContainer">
+    <h4>Jelentkezz be a gyorsabb hirdetésfeladásért:</h4>
+    <button class="btn btn-primary">Regisztráció</button>
+    <button class="btn btn-primary mt-3" *ngIf="!this.service.isLoggedIn()" (click)="authService.GoogleAuth()">Bejelentkezés a Google-lal</button>
+</div>

@@ -1,0 +1,32 @@
+<div class="contanier create mx-auto">
+
+    <form>
+        <div class="mb-3">
+            <label for="city" class="form-label">Város:</label>
+            <input type="text" class="form-control" name="city" id="city" [(ngModel)]="this.actualAdvertising.adCity">
+        </div>
+        <div class="mb-3">
+            <label for="area" class="form-label">Terület:</label>
+            <input type="number" class="form-control" name="area" id="area" [(ngModel)]="this.actualAdvertising.adArea">
+        </div>
+        <div class="mb-3">
+            <label for="area" class="form-label">Ár:</label>
+            <input type="number" class="form-control" name="price" id="price" [(ngModel)]="this.actualAdvertising.adPrice">
+        </div>
+        <div class="mb-3">
+            <label for="ownerName" class="form-label">Hirdető teljes neve:</label>
+            <input type="text" class="form-control" name="ownerName" *ngIf="this.service.isLoggedIn()" disabled
+                [(ngModel)]="this.actualAdvertising.ownerName">
+            <input type="text" class="form-control" name="ownerName" id="ownerName" *ngIf="!this.service.isLoggedIn()"
+                [(ngModel)]="this.actualAdvertising.ownerName">
+        </div>
+        <div class="mb-3">
+            <label for="ownerEmail" class="form-label">Hirdető email címe:</label>
+            <input type="email" class="form-control" name="ownerEmail" *ngIf="this.service.isLoggedIn()" disabled
+                [(ngModel)]="this.actualAdvertising.ownerEmail">
+            <input type="email" class="form-control" name="ownerEmail" id="ownerEmail" *ngIf="!this.service.isLoggedIn()"
+                [(ngModel)]="this.actualAdvertising.ownerEmail">
+        </div>
+        <button class="btn btn-primary" id="send" (click)="this.service.add(this.actualAdvertising)" routerLink="list">Küldés</button>
+    </form>
+</div>

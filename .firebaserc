@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "realestate-f0d24": {
+      "hosting": {
+        "hostingesteszteles": [
+          "realestate-f0d24"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "realestate-f0d24"
+  }
+}

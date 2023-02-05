@@ -1,0 +1,19 @@
+<div class="container-fluid list">
+
+  <button class="btn btn-primary" (click)="popalert(this.service.average())">Átlag ár</button>
+
+  <div class="card text-center mt-5" *ngFor="let x of this.service.advertise">
+    <div class="card-body">
+      <h5 class="card-title">Város: {{x.adCity}}</h5>
+      <p class="card-text">Terület: {{x.adArea}}</p>
+      <p class="card-text">Ára: {{x.adPrice}}</p>
+
+    </div>
+    <div class="card-footer text-muted">
+      <p>Hirdető neve: {{x.ownerName}}</p>
+      <p>Hirdető email címe: {{x.ownerEmail}}</p>
+    </div>
+  </div>
+
+
+</div>
